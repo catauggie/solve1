@@ -1,0 +1,7 @@
+s = set([54, 2, 33, 2])
+s.add(1)
+#s.add('a')
+# None тоже можно добавить =)
+#s.add(None)
+#s.add('bullet')
+print(sorted(s))
