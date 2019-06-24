@@ -1,16 +1,13 @@
 import re
-import collections
  
-list_of_paths = ['text1.txt', 'text2.txt']
- 
-for path in list_of_paths:
-  with open(path) as f:
-    f = f.read()
-    reg = re.compile('[^a-zA-Z \\n]')
-    l = reg.sub('', f).split()
-  c = collections.Counter()
-  for word in l:
-    c[word] += 1
-  print(dict(c))
- 
-print(list_of_paths)
+listes_of_path = [r'D:/python/test1.txt']
+reg = re.compile('[^а-яА-Яa-zA-Z \\n]')
+for file in listes_of_path:
+    with open(file,'r') as f_in:
+        data = f_in.read()
+        l = reg.sub(' ', data).split()
+        c = {}
+        for word in l:
+            c[word] = c.get(word,0)+1
+    for k,v in c.items():
+        print(k,v)
